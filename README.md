@@ -19,18 +19,29 @@ Expects input of the form:  unique identifier for each triplet of cards, action 
 For example, (say, typed in a text file):
 
 167, a
+
 291, s
+
 371, b
 
 where a is the command to make an audio card, s a sentence card, b both a sentence and an audio card
  
 Copy that input and then paste into the strInput variable in the ###Your Input### section of the code
+
 Also in Your Input, name the deck you want to look thru (if you want to restrict it to a certain deck)
+
 Also, specify what field on your cards is the unique identifier for the triplet.  Example:  Optimized-Voc-Index
+
 In the ####CONSTANTS YOU MAY NEED/WANT TO CHANGE####, make sure your deck templates numbers minus 1 are assigned appropriately
+
 Change other settings if you'd like to
+
 Save the python file, and file should be stored in the right Anki folder and in its own folder called VocabToSnA:
-		For windows, see:  https://massimmersionapproach.com/table-of-contents/anki/low-key-anki/low-key-anki-summary-and-installation/
-		For mac, Anki2 > addons21 > VocabToSnA folder
+
+For windows, see:  https://massimmersionapproach.com/table-of-contents/anki/low-key-anki/low-key-anki-summary-and-installation/
+
+For mac, Anki2 > addons21 > VocabToSnA folder
+
 Open Anki (or if already open, close, and then re-open so that it detects the updated file)
+
 Click  "Vocab to Sentence and/or Audio" in the Tools menu on the main screen (ie, Decks screen, not Browse) to use
