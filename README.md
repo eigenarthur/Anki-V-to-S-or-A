@@ -18,9 +18,9 @@ Expects input of the form:  unique identifier for each triplet of cards, action 
 
 For example, (say, typed in a text file):
 
-167, a
-291, s
-371, b
+167, a  
+291, s  
+371, b  
 
 where a is the command to make an audio card, s a sentence card, b both a sentence and an audio card
  
