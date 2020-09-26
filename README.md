@@ -12,7 +12,7 @@ Also, you'll have to add your input to the python file before running the add-on
 # Purpose of code:  
 You're studying vocab cards that also have sentence and audio cards, but you've learned the vocab,
            so now you want to suspend that vocab card and schedule either the sentence, audio, or both to study instead.
-           The sentence card gains the vocab card's due date (or "3 days" if new/learning), and the audio card gets due date + padding.
+           The sentence card gains the vocab card's due date (or between 3 and 6 days if resetting), and the audio card gets due date + padding.
 
 # How to use:
 The code is labeled to help explain things / call out spots where you might need to make changes according to your setup
@@ -38,8 +38,8 @@ Save the python file, and file should be stored in the right Anki folder and in 
 Open Anki (or if already open, close, and then re-open so that it detects the updated file)  
 Click  "Vocab to Sentence and/or Audio" in the Tools menu on the main screen (ie, Decks screen, not Browse) to use
 
-!!!! NEW !!!  can now stick , r at the end of a line of input to "reset the date" to be within 3 to 6 days of your current today
-To do this, just sick ', r' at the end of a line of input like this:
-236, b
+!!!! NEW !!!  can now stick ', r' at the end of a line of input to "reset the date" to be within 3 to 6 days of your current today
+Example:
+236, b, r
 
 Useful if you're studying a card that's not going to show up until a month or so later, but you want to see the sentence/audio card sooner that than to practice.
