@@ -6,6 +6,9 @@ from aqt.utils import showInfo
 from aqt.qt import *
 # card functions
 from anki.cards import Card
+#time calc
+from datetime import date
+import random
 
 ################################################################################################################################
 # Purpose:  You're studying vocab cards that also have sentence and audio cards, but you've learned the vocab,
@@ -31,6 +34,15 @@ from anki.cards import Card
 #		For mac, Anki2 > addons21 > VocabToSnA folder
 # Open Anki (or if already open, close, and then re-open so that it detects the updated file)
 # Click  "Vocab to Sentence and/or Audio" in the Tools menu on the main screen (ie, Decks screen, not Browse) to use
+#
+#
+#  !!!! NEW !!!  can now stick , r at the end of a line of input to "reset the date" to be within 3 to 6 days of your current today
+#  To do this, just sick ', r' at the end of a line of input like this:
+#			236, b
+#
+#  Useful if you're studying a card that's not going to show up until a month or so later, but you want to see the sentence/audio
+#  card sooner that than to practice.
+#
 ################################################################################################################################
 
 
@@ -58,27 +70,16 @@ AUDIOPADDING = 4  # > 0 to prevent a sentence card and an audio card from being 
 parentDeckName = "Learning Cards"  # or "" if no parent deck	# My deck is setup like:  Learning Deck > Core Deck
 deckName = "Core 2000"  # or "" if you want to search every card in your profile
 uniqueTripletIdentifier = "Optimized-Voc-Index"	#pick whatever unique identify your cards have; normally something like an ID or Index
+DATEFIRSTSTARTEDANKI = date(2020, 8, 4)  #Input YOUR start date of using Anki
 
+
+todaysDate = date(2020, 9, 26)  #Remember to update this along with adding in your new input
+deltaDate = todaysDate - DATEFIRSTSTARTEDANKI
+numDays = deltaDate.days
 #Here's where you'll input those unique identifiers and the actions you want to take on those cards
 #NOTE:  MUST Surround with triple quotes (or Python won't treat it as multi-line)
-strInput = """853, b
-846, b
-394, a
-844, b
-29, s
-849, s
-642, s
-629, b
-610, b
-845, b
-673, b
-840, s
-839, s
-837, b
-856, s
-852, s
-860, s
-843, b"""
+strInput = """532, s
+315, s, r"""
 
 
 ####Constants for what input is expected####
@@ -130,9 +131,11 @@ def justDoIt():
 		if vocabCard.queue == SUSPENDED:  #don't schedule a card based on a suspended vocab card
 			continue
 
-		vocabDueDate = 3  #if new or learning
-		if vocabCard.queue == DUE:
-			vocabDueDate = vocabCard.due  #integer value for number of days
+		vocabDueDate = numDays + random.randint(3, 6)  #if new or learning or resetting
+		if (vocabCard.queue == DUE) and (len(arrPieces)) == 2:
+			vocabDueDate = vocabCard.due  #apparently an integer based on whenever you first started Anki?
+
+
 
 		#now take action on each card
 		for id in arrTripletCardIds:
