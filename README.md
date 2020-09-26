@@ -37,3 +37,9 @@ Save the python file, and file should be stored in the right Anki folder and in 
            For mac, Anki2 > addons21 > VocabToSnA folder  
 Open Anki (or if already open, close, and then re-open so that it detects the updated file)  
 Click  "Vocab to Sentence and/or Audio" in the Tools menu on the main screen (ie, Decks screen, not Browse) to use
+
+!!!! NEW !!!  can now stick , r at the end of a line of input to "reset the date" to be within 3 to 6 days of your current today
+To do this, just sick ', r' at the end of a line of input like this:
+236, b
+
+Useful if you're studying a card that's not going to show up until a month or so later, but you want to see the sentence/audio card sooner that than to practice.
